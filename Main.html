@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JAKS – Automated Shoe Polisher</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Style for the pop-up box */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      width: 60%;
+    }
+
+    .popup.active {
+      display: block;
+    }
+
+    .popup .popup-content {
+      padding: 10px;
+    }
+
+    .popup button {
+      background-color: #5D1C34;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .popup button:hover {
+      background-color: #A67D44;
+    }
+
+    .popup .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: #5D1C34;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="JAKS Logo" class="logoimage" />
+      <p class="brand-caption">Effortless Elegance for Your Shoes</p>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#" class="nav-item" id="products-link">Products</a>
+      <a href="#" class="nav-item" id="services-link">Services</a>
+      <a href="#" class="nav-item" id="careers-link">Careers</a>
+      <a href="#" class="nav-item" id="contact-link">Contact Us</a>
+      <a href="#" class="nav-item" id="locations-link">Locations</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Simplify Shoe Care</h2>
+      <p>No more mess. No more effort. JAKS brings you the smartest way to clean and polish your shoes — sleek, powerful, and made for modern life.</p>
+      <button id="discover-btn" class="button">Why us?</button>
+    </section>
+
+    <section id="hidden-services" class="services hidden">
+      <div class="service-card">Automated cleaning and polishing</div>
+      <div class="service-card">Smart app integration & sensor-based operation</div>
+      <div class="service-card">Quiet, hygienic, and easy to use</div>
+      <div class="service-card">Ideal for homes, hotels, and offices</div>
+      <div class="service-card">Includes shoe lays, free soles & care app</div>
+    </section>
+
+    <section class="history-link">
+      <h2>Curious about how we started?</h2>
+      <a href="history.html" class="button">Journey</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 JAKS. All rights reserved.</p>
+  </footer>
+
+  <!-- Pop-up Boxes for Navigation -->
+  <div id="products-popup" class="popup">
+    <button class="close-btn" onclick="closePopup('products-popup')">&times;</button>
+    <div class="popup-content">
+      <h3>Our Products</h3>
+      <ul>
+        <li>Shoe Polisher</li>
+        <li>Shoe Lays Set</li>
+        <li>Replacement Soles</li>
+        <li>Care App Subscription</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="services-popup" class="popup">
+    <button class="close-btn" onclick="closePopup('services-popup')">&times;</button>
+    <div class="popup-content">
+      <h3>Our Services</h3>
+      <ul>
+        <li>Automated Shoe Cleaning & Polishing</li>
+        <li>Smart App Integration</li>
+        <li>Quiet and Hygienic Operation</li>
+        <li>Maintenance & Support</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="careers-popup" class="popup">
+    <button class="close-btn" onclick="closePopup('careers-popup')">&times;</button>
+    <div class="popup-content">
+      <h3>Join Us at JAKS</h3>
+      <br>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required><br>
+        <label for="qualification">Qualification</label>
+        <input type="text" id="qualification" name="qualification" required> <br>
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" required> <br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="contact-popup" class="popup">
+    <button class="close-btn" onclick="closePopup('contact-popup')">&times;</button>
+    <div class="popup-content">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:contact@jaks.com">contact@jaks999@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div id="locations-popup" class="popup">
+    <button class="close-btn" onclick="closePopup('locations-popup')">&times;</button>
+    <div class="popup-content">
+      <h3>Our Locations</h3>
+      <ul>
+        <li>Alappuzha</li>
+        <li>More Soon</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="hidden-services" class="services hidden">
+    <div class="service-card">Automated cleaning and polishing</div>
+    <div class="service-card">Smart app integration & sensor-based operation</div>
+    <div class="service-card">Quiet, hygienic, and easy to use</div>
+    <div class="service-card">Ideal for homes, offices and possibly everywhere you need a shoe</div>
+    <div class="service-card">Includes shoe lays, free soles & care app(working)</div>
+  </section>
+
+  <script>
+    // Show Popup based on clicked link
+    document.getElementById('products-link').addEventListener('click', function() {
+      openPopup('products-popup');
+    });
+
+    document.getElementById('services-link').addEventListener('click', function() {
+      openPopup('services-popup');
+    });
+
+    document.getElementById('careers-link').addEventListener('click', function() {
+      openPopup('careers-popup');
+    });
+
+    document.getElementById('contact-link').addEventListener('click', function() {
+      openPopup('contact-popup');
+    });
+
+    document.getElementById('locations-link').addEventListener('click', function() {
+      openPopup('locations-popup');
+    });
+
+    // Open Popup Function
+    function openPopup(popupId) {
+      document.getElementById(popupId).classList.add('active');
+    }
+
+    // Close Popup Function
+    function closePopup(popupId) {
+      document.getElementById(popupId).classList.remove('active');
+    }
+  </script>
+  <script>
+    document.getElementById("discover-btn").addEventListener("click", function () {
+      var servicesSection = document.getElementById("hidden-services");
+      servicesSection.classList.toggle("hidden");  // This will toggle visibility
+    });
+  </script>
+  
+</body>
+</html>
